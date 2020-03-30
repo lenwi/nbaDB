@@ -1,0 +1,2 @@
+Add checkmarks for playerview.
+checkmarks to show playerview columns
