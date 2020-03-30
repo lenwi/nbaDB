@@ -1,2 +1,4 @@
 Add checkmarks for playerview.
 checkmarks to show playerview columns
+
+<% var myvar = true;%> myvar sets flag
