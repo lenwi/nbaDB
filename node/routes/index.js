@@ -1,6 +1,6 @@
 module.exports = {
     getHomePage: (req, res) => {
-        let query = "SELECT * FROM PlayerPlaysFor ORDER BY id ASC"; // query database to get all the players
+        let query = "select * from teamplayers" //display players with teams
 
         // execute query
         db.query(query, (err, result) => {
@@ -10,7 +10,8 @@ module.exports = {
             console.log("###########################")
             console.log(res)
             res.render('index.ejs', {
-                title: "NBA DB | View Players", players: result
+                title: "NBA DB | View Players", 
+                players: result, 
             });
         });
     },

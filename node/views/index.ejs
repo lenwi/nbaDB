@@ -2,26 +2,30 @@
     <div class="table-wrapper">
         <% if (players.length > 0) {%>
             <table class="table table-hovered">
+                <input type="checkbox" id=hideZ onclick="a.style='display:none;'">
+                <label for="hideZ">&nbsp;Show/Hide Z-score &nbsp;&nbsp;&nbsp; </label>
+                <input type="checkbox" id=hideA onclick="a.style='display:none;'">
+                <label for="hideA">&nbsp;Show/Hide Actions</label>
                 <thead class="thead-dark">
                     <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">teamID</th>
-                        <th scope="col">#</th>
+                        <th scope="col">Team</th>
                         <th scope="col">Name</th>
-                        <th scope="col">Z-Score</th>
+                        <th scope="col">#</th>
                         <th scope="col">Position</th>
-                        <th scope="col">Action</th>
+                        <th scope="col">Z-score
+                    <th scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     <% players.forEach((player, index) => { %>
                         <tr>
-                            <th scope="row"><%= player.id %></th>
-                            <td><%= player.teamID %></td>
-                            <td><%= player.number %></td>
-                            <td><%= player.name %></td>
+                            <td><%= player.teamname %></th>
+                            <td><%= player.playername %></td>
+                            <td><%= player.playernum %></td>
+                            <td><%= player.playerposition %></td>
+                            <% if (false) {%>
                             <td><%= player.zscore %></td>
-                            <td><%= player.position %></td>
+                            <% }%>
                             <td>
                                 <a href="/edit/<%= player.id %>" target="_blank" rel="noopener" class="btn btn-sm btn-success">Edit</a>
                                 <a href="/delete/<%= player.id %>" class="btn btn-sm btn-danger">Delete</a>

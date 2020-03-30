@@ -39,6 +39,8 @@ app.get('/viewTeams', getTeams);
 app.get('/addPlayer', getPlayer);
 
 
+
+
 // set the app to listen on the port
 app.listen(port, () => {
     console.log(`Server running on port: ${port}`);
