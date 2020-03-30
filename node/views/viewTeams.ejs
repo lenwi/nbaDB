@@ -1,13 +1,22 @@
 <%- include ('partials/header.ejs'); -%>
     <div class="table-wrapper">
         <% if (teams.length > 0) {%>
+            ID: <input type="checkbox" id="idCheck" checked>
+            Logo: <input type="checkbox" id="logoCheck" checked>
+            City: <input type="checkbox" id="cityCheck" checked>
+            Name: <input type="checkbox" id="nameCheck" checked>
+            Country: <input type="checkbox" id="countryCheck" checked>
+            Arena: <input type="checkbox" id="arenaCheck" checked>
+
             <table class="table table-hovered">
                 <thead class="thead-dark">
                     <tr>
                         <th scope="col">ID</th>
-                        <th scope="col">cityID</th>
-                        <th scope="col">Name</th>
                         <th scope="col">Logo</th>
+                        <th scope="col">City</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Country</th>
+                        <th scope="col">Arena</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
@@ -15,9 +24,11 @@
                     <% teams.forEach((team, index) => { %>
                         <tr>
                             <th scope="row"><%= team.id %></th>
-                            <td><%= team.cityID %></td>
-                            <td><%= team.name %></td>
-                            <td><%= team.logo %></td>
+                            <td><img src=<%=team.logo%> style="width:40px;height:40px;"/></td>
+                            <td><%= team.city %></td>
+                            <td><%= team.teamname %></td>
+                            <td><%= team.country %></td>
+                            <td><%= team.arena %></td>
                             <td>
                                 <a href="/edit/<%= team.id %>" target="_blank" rel="noopener" class="btn btn-sm btn-success">Edit</a>
                                 <a href="/delete/<%= team.id %>" class="btn btn-sm btn-danger">Delete</a>

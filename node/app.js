@@ -14,7 +14,7 @@ const port = 9000;
 const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'macbook123',
+    password: '12345678',
     database: 'nbaDB'
   });
 
