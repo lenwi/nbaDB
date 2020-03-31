@@ -1,11 +1,11 @@
 <%- include ('partials/header.ejs'); -%>
     <div class="table-wrapper">
         <% if (players.length > 0) {%>
+            <a href='/hideA'><button type="button" class="btn btn-sm btn-primary float-right ">Hide Action</button></a>
+            <a href='/'><button type="button" class="btn btn-sm btn-light float-right ">Show Action</button></a>
+            <a href='/hideZ'><button type="button" class="btn btn-sm btn-primary float-right ">Hide Z-score</button></a>
+            <a href='/'><button type="button" class="btn btn-sm btn-light float-right">Show Z-score</button></a>
             <table class="table table-hovered">
-                <input type="checkbox" id=hideZ onclick="a.style='display:none;'">
-                <label for="hideZ">&nbsp;Show/Hide Z-score &nbsp;&nbsp;&nbsp; </label>
-                <input type="checkbox" id=hideA onclick="a.style='display:none;'">
-                <label for="hideA">&nbsp;Show/Hide Actions</label>
                 <thead class="thead-dark">
                     <tr>
                         <th scope="col">Team</th>
@@ -23,9 +23,7 @@
                             <td><%= player.playername %></td>
                             <td><%= player.playernum %></td>
                             <td><%= player.playerposition %></td>
-                            <% if (false) {%>
                             <td><%= player.zscore %></td>
-                            <% }%>
                             <td>
                                 <a href="/edit/<%= player.id %>" target="_blank" rel="noopener" class="btn btn-sm btn-success">Edit</a>
                                 <a href="/delete/<%= player.id %>" class="btn btn-sm btn-danger">Delete</a>
