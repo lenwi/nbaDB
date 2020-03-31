@@ -1,6 +1,11 @@
 <%- include ('partials/header.ejs'); -%>
     <div class="table-wrapper">
         <% if (players.length > 0) {%>
+            <form class="text-center" action="/form" method="POST">
+                <label>Find Z-scores >=</label>
+                <input type="text" name="zscoreinput">
+                <input type="submit" name="submit" value="Submit"/>
+            </form>
             <a href='/hideA'><button type="button" class="btn btn-sm btn-primary float-right ">Hide Action</button></a>
             <a href='/'><button type="button" class="btn btn-sm btn-light float-right ">Show Action</button></a>
             <a href='/hideZ'><button type="button" class="btn btn-sm btn-primary float-right ">Hide Z-score</button></a>
