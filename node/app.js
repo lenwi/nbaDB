@@ -50,9 +50,7 @@ app.get('/showA', getShowAction);
 app.get('/hideZ', getHideZscore);
 app.get('/hideAll', getHideAll);
 
-app.get("/form", function(req, res) {
-  res.sendfile("./index.ejs");
-})
+app.get("/form", getHomePage);
 
 app.post("/form", getNewZscore);
 
