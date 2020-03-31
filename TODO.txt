@@ -14,7 +14,7 @@
 11. Division operation - See query in queries.sql. Show standings for a team in year.
 
 
-6. Select operation - UI button above z-score to display scores less/more than a variable input. - DONE?  *for >=
+6. Select operation - UI button above z-score to display scores less/more than a variable input. - DONE//
     *See backlog #2 for extra functionality
 7. Projection operation - checkboxes for displaying columns -DONE? *see #12
     * Do for display action
@@ -24,7 +24,7 @@
 Backlog:
 1. When viewing team, make header button to go back to viewing players. 
 2. Order desc/asc from clicking columns
-3. Select operation, for player name and position. 
+3. Select operation, for player name and position. -DONE//
 
 
 

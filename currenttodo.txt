@@ -1,4 +1,10 @@
 Add checkmarks for playerview.
 checkmarks to show playerview columns
 
+//checkmarks progress
 <% var myvar = true;%> myvar sets flag
+<% if (var) {%>
+<display columns here>
+<%} %>
+
+maybe remove show/hide action -- seems unnecessary
