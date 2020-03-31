@@ -1,0 +1,39 @@
+<%- include ('partials/header.ejs'); -%>
+    <div class="table-wrapper">
+        <% if (players.length > 0) {%>
+            <a href='/hideAll'><button type="button" class="btn btn-sm btn-primary float-right ">Hide Action</button></a>
+            <a href='/hideZ'><button type="button" class="btn btn-sm btn-light float-right ">Show Action</button></a>
+            <a href='/hideZ'><button type="button" class="btn btn-sm btn-light float-right ">Hide Z-score</button></a>
+            <a href='/'><button type="button" class="btn btn-sm btn-info float-right">Show Z-score</button></a>
+            <table class="table table-hovered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Team</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">#</th>
+                        <th scope="col">Position</th>
+                    <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% players.forEach((player, index) => { %>
+                        <tr>
+                            <td><%= player.teamname %></th>
+                            <td><%= player.playername %></td>
+                            <td><%= player.playernum %></td>
+                            <td><%= player.playerposition %></td>
+                            <td>
+                                <a href="/edit/<%= player.id %>" target="_blank" rel="noopener" class="btn btn-sm btn-success">Edit</a>
+                                <a href="/delete/<%= player.id %>" class="btn btn-sm btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        <% } else { %>
+            <p class="text-center">No players found. Go <a href="/addPlayer" >here</a> to add players.</p>
+        <% } %>
+    </div>
+</div>
+</body>
+</html>
