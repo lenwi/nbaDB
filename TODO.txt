@@ -16,7 +16,7 @@
 
 6. Select operation - UI button above z-score to display scores less/more than a variable input. - DONE//
     *See backlog #2 for extra functionality
-7. Projection operation - checkboxes for displaying columns -DONE? *see #12, still need projection query**
+7. Projection operation - checkboxes for displaying columns -DONE? *see #12
     * Do for display action
 12. Add checkmarks for playerview. - DONE? *made buttons instead
 
