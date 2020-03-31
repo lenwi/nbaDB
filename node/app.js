@@ -9,6 +9,7 @@ const app = express();
 const {getHomePage} = require('./routes/index');
 const {getTeams} = require('./routes/viewTeams');
 const {getPlayer} = require('./routes/addPlayer');
+const {getNewZscore} = require('./routes/newZscore');
 
 //show/hide buttons
 const {getHideAction} = require('./routes/index_buttons/hideAction');
@@ -49,6 +50,11 @@ app.get('/showA', getShowAction);
 app.get('/hideZ', getHideZscore);
 app.get('/hideAll', getHideAll);
 
+app.get("/form", function(req, res) {
+  res.sendfile("./index.ejs");
+})
+
+app.post("/form", getNewZscore);
 
 
 // set the app to listen on the port
