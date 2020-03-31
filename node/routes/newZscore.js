@@ -1,6 +1,7 @@
 module.exports = {
-    getHomePage: (req, res) => {
-        let query = "select * from teamplayers" //display players with teams
+    getNewZscore: (req, res) => {
+        var zInput=req.body.zscoreinput;
+        let query = "select * from teamplayers " + "where zscore >= " + zInput; //display players with teams
 
         // execute query
         db.query(query, (err, result) => {

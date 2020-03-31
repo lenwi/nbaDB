@@ -1,11 +1,12 @@
 --Displays players grouped by team, show when creating/deleting a new player
 --Join
 CREATE VIEW teamPlayers AS 
-SELECT teamplaysin.name AS Team, playerplaysfor.name AS Player, 
-playerplaysfor.number AS Num, playerplaysfor.position AS Pos
+SELECT teamplaysin.name AS teamname, playerplaysfor.name AS playername, 
+playerplaysfor.number AS playernum, playerplaysfor.position AS playerposition,
+playerplaysfor.zscore AS zscore
 FROM teamplaysin Inner JOIN playerplaysfor
 ON teamplaysin.id=playerplaysfor.teamID
-ORDER BY Team
+ORDER BY teamname
 
 Go --remove Go in mysql
 

@@ -9,6 +9,13 @@ const app = express();
 const {getHomePage} = require('./routes/index');
 const {getTeams} = require('./routes/viewTeams');
 const {getPlayer} = require('./routes/addPlayer');
+const {getNewZscore} = require('./routes/newZscore');
+
+//show/hide buttons
+const {getHideAction} = require('./routes/index_buttons/hideAction');
+const {getShowAction} = require('./routes/index_buttons/showAction');
+const {getHideZscore} = require('./routes/index_buttons/hideZscore');
+const {getHideAll} = require('./routes/index_buttons/hideAll');
 
 const port = 9000;
 const db = mysql.createConnection({
@@ -37,6 +44,15 @@ app.use(express.static(path.join(__dirname, 'public'))); // configure express to
 app.get('/', getHomePage);
 app.get('/viewTeams', getTeams);
 app.get('/addPlayer', getPlayer);
+
+app.get('/hideA', getHideAction);
+app.get('/showA', getShowAction);
+app.get('/hideZ', getHideZscore);
+app.get('/hideAll', getHideAll);
+
+app.get("/form", getHomePage);
+
+app.post("/form", getNewZscore);
 
 
 // set the app to listen on the port

@@ -1,6 +1,6 @@
 module.exports = {
-    getHomePage: (req, res) => {
-        let query = "select * from teamplayers" //display players with teams
+    getHideZscore: (req, res) => {
+        let query = "select teamname, playername, playernum, playerposition from teamplayers" //display players with teams
 
         // execute query
         db.query(query, (err, result) => {
@@ -8,7 +8,8 @@ module.exports = {
                 res.redirect('/');
             }
             console.log("###########################")
-            res.render('index.ejs', {
+            console.log(res)
+            res.render('indexHiddenZ.ejs', {
                 title: "NBA DB | View Players", 
                 players: result, 
             });

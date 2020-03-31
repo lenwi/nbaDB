@@ -1,5 +1,5 @@
 module.exports = {
-    getHomePage: (req, res) => {
+    getShowAction: (req, res) => {
         let query = "select * from teamplayers" //display players with teams
 
         // execute query
@@ -8,6 +8,7 @@ module.exports = {
                 res.redirect('/');
             }
             console.log("###########################")
+            console.log(res)
             res.render('index.ejs', {
                 title: "NBA DB | View Players", 
                 players: result, 

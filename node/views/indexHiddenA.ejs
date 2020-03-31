@@ -6,10 +6,10 @@
                 <input type="text" name="zscoreinput">
                 <input type="submit" name="submit" value="Submit"/>
             </form>
-            <a href='/hideA'><button type="button" class="btn btn-sm btn-light float-right ">Hide Action</button></a>
-            <a href='/'><button type="button" class="btn btn-sm btn-primary float-right ">Show Action</button></a>
-            <a href='/hideZ'><button type="button" class="btn btn-sm btn-light float-right ">Hide Z-score</button></a>
-            <a href='/'><button type="button" class="btn btn-sm btn-primary float-right">Show Z-score</button></a>
+            <a href='/hideA'><button type="button" class="btn btn-sm btn-info float-right ">Hide Action</button></a>
+            <a href='/showA'><button type="button" class="btn btn-sm btn-light float-right ">Show Action</button></a>
+            <a href='/hideAll'><button type="button" class="btn btn-sm btn-light float-right ">Hide Z-score</button></a>
+            <a href='/hideA'><button type="button" class="btn btn-sm btn-primary float-right">Show Z-score</button></a>
             <table class="table table-hovered">
                 <thead class="thead-dark">
                     <tr>
@@ -18,7 +18,6 @@
                         <th scope="col">#</th>
                         <th scope="col">Position</th>
                         <th scope="col">Z-score
-                    <th scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -29,10 +28,6 @@
                             <td><%= player.playernum %></td>
                             <td><%= player.playerposition %></td>
                             <td><%= player.zscore %></td>
-                            <td>
-                                <a href="/edit/<%= player.id %>" target="_blank" rel="noopener" class="btn btn-sm btn-success">Edit</a>
-                                <a href="/delete/<%= player.id %>" class="btn btn-sm btn-danger">Delete</a>
-                            </td>
                         </tr>
                     <% }) %>
                 </tbody>

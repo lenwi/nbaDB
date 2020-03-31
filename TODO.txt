@@ -8,16 +8,24 @@
 5. Update operation - edit player - ASAD
 
 
-6. Select operation - UI button above z-score to display scores less/more than a variable input.
-    *See backlog #2 for extra functionality
-7. Projection operation - checkboxes for displaying columns 
-    * Do for display action
 // 8. Join operation - See query in queries.sql. Show when adding player, show players that play for teams.
 9. Aggregate operation - See query in queries.sql. Show when clicking team checkbox, display number of sponsors.
 10. Nested Aggregate operation - See query in queries.sql. Show when clicking team checkbox, display number of players.
 11. Division operation - See query in queries.sql. Show standings for a team in year.
 
-12. Add checkmarks for playerview. - WEN
+
+6. Select operation - UI button above z-score to display scores less/more than a variable input. - DONE?  *for >=
+    *See backlog #2 for extra functionality
+7. Projection operation - checkboxes for displaying columns -DONE? *see #12
+    * Do for display action
+12. Add checkmarks for playerview. - DONE? *made buttons instead
+
+
 Backlog:
 1. Order desc/asc from clicking columns
 2. Select operation, for player name and position. 
+
+
+
+
+//test
