@@ -23,7 +23,7 @@
 
 Backlog:
 1. Order desc/asc from clicking columns
-2. Select operation, for player name and position. 
+2. Select operation, for player name and position. -DONE//
 
 
 
