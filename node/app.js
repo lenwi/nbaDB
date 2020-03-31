@@ -51,9 +51,7 @@ app.get('/hideZ', getHideZscore);
 app.get('/hideAll', getHideAll);
 
 app.get("/form", getHomePage);
-
 app.post("/form", getNewZscore);
-
 
 // set the app to listen on the port
 app.listen(port, () => {
