@@ -22,8 +22,9 @@
 
 
 Backlog:
-1. Order desc/asc from clicking columns
-2. Select operation, for player name and position. -DONE//
+1. When viewing team, make header button to go back to viewing players. 
+2. Order desc/asc from clicking columns
+3. Select operation, for player name and position. -DONE//
 
 
 
