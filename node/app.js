@@ -11,7 +11,7 @@ const {getTeams} = require('./routes/viewTeams');
 const {addPlayer, addPlayerPage} = require('./routes/addPlayer');
 const {getNewZscore} = require('./routes/newZscore');
 const {getStanding} = require('./routes/viewStanding');
-
+const {deletePlayer} = require('./routes/deletePlayer');
 //show/hide buttons
 const {getHideAction} = require('./routes/index_buttons/hideAction');
 const {getShowAction} = require('./routes/index_buttons/showAction');
@@ -46,7 +46,7 @@ app.get('/', getHomePage);
 app.get('/viewTeams', getTeams);
 app.get('/addPlayer', addPlayerPage);
 app.get('/viewStanding', getStanding);
-
+app.get('/delete/:id', deletePlayer);
 app.get('/hideA', getHideAction);
 app.get('/showA', getShowAction);
 app.get('/hideZ', getHideZscore);
