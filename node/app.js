@@ -52,10 +52,7 @@ app.get('/showA', getShowAction);
 app.get('/hideZ', getHideZscore);
 app.get('/hideAll', getHideAll);
 
-app.get("/form", getHomePage);
 app.post("/form", getNewZscore);
-
-app.get("/standingForm", getHomePage);
 
 app.post("/standingForm", getStanding);
 
