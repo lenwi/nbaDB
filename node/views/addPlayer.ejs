@@ -1,32 +1,47 @@
 <%- include ('partials/header.ejs'); -%>
-    <div class="table-wrapper">
-        <% if (viewPlayers.length > 0) {%>
-            <table class="table table-hovered">
-                <thead class="thead-dark">
-                    <tr>
-                        <th scope="col">Team</th>
-                        <th scope="col">Player</th>
-                        <th scope="col">#</th>
-                        <th scope="col">Position</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <% viewPlayers.forEach((viewPlayer, index) => { %>
-                        <tr>
-                            <th scope="row"><%= viewPlayer.teamname %></th>
-                            <td><%= viewPlayer.playername %></td>
-                            <td><%= viewPlayer.playernum %></td>
-                            <td><%= viewPlayer.playerposition %></td>
-                        </tr>
-                    <% }) %>
-                </tbody>
-            </table>
-        <% } else { %>
-            <p class="text-center">No players found. Go <a href="/addPlayer" >here</a> to add players.</p>
+    <div class="container">
+        <% if (message != '') { %>
+            <p class="text-center text-danger"><%= message %></p>
         <% } %>
+        <form  action="/addPlayer" method="POST">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <input type="text" class="form-control" name="first_name" id="first-name" placeholder="First Name" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <input type="text" class="form-control" name="last_name" id="last-name" placeholder="Last Name" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <input type="number" class="form-control" name="number" id="number" placeholder="Number" required>
+                </div>
+                <div  class="form-group col-md-6">
+                    <input type="number" step="0.1" class="form-control" name="zscore" id="zscore" placeholder="Z-Score" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <select id="position" name="position" class="form-control" required>
+                        <option selected disabled>Choose position</option>
+                        <option>Guard</option>
+                        <option>Forward</option>
+                        <option>Center</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <select id="team" name="team" class="form-control" required>
+                        <option selected disabled>Choose team</option>
+                      <% teams.forEach((team) => { %>
+                        <option value="<%= team.name %>" > <%=team.name %> </option>
+                        <% }) %>
+                    </select>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary float-right">Add Player</button>
+        </form>
     </div>
 </div>
 </body>
 </html>
-<!-- TODO// add fields to add a new player above table,
-the view is used to show user what players are already in db-->>
+
+<!--INSERT INTO PlayerPlaysFor values(3, 3, 30, "Lebron James", "F", 4);-->
+

@@ -8,7 +8,7 @@ const app = express();
 
 const {getHomePage} = require('./routes/index');
 const {getTeams} = require('./routes/viewTeams');
-const {getPlayer} = require('./routes/addPlayer');
+const {addPlayer, addPlayerPage} = require('./routes/addPlayer');
 const {getNewZscore} = require('./routes/newZscore');
 const {getStanding} = require('./routes/viewStanding');
 
@@ -44,7 +44,7 @@ app.use(express.static(path.join(__dirname, 'public'))); // configure express to
 
 app.get('/', getHomePage);
 app.get('/viewTeams', getTeams);
-app.get('/addPlayer', getPlayer);
+app.get('/addPlayer', addPlayerPage);
 app.get('/viewStanding', getStanding);
 
 app.get('/hideA', getHideAction);
@@ -53,6 +53,7 @@ app.get('/hideZ', getHideZscore);
 app.get('/hideAll', getHideAll);
 
 app.post("/form", getNewZscore);
+app.post("/addPlayer", addPlayer);
 
 app.post("/standingForm", getStanding);
 
