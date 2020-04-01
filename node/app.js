@@ -8,11 +8,12 @@ const app = express();
 
 const {getHomePage} = require('./routes/index');
 const {getTeams} = require('./routes/viewTeams');
-const {getPlayer} = require('./routes/addPlayer');
 const {getHideArena} = require('./routes/hideArena');
+const {addPlayer, addPlayerPage} = require('./routes/addPlayer');
 const {getNewZscore} = require('./routes/newZscore');
 const {getStanding} = require('./routes/viewStanding');
-
+const {deletePlayer} = require('./routes/deletePlayer');
+const {editPlayerPage, editPlayer} = require('./routes/editPlayer');
 //show/hide buttons
 const {getHideAction} = require('./routes/index_buttons/hideAction');
 const {getShowAction} = require('./routes/index_buttons/showAction');
@@ -57,7 +58,6 @@ app.post('/viewTeams', (req, res) => {
     });
     getTeams(req, res);
 });
-app.get('/addPlayer', getPlayer);
 app.get('/hideArena', getHideArena);
 app.post('/hideArena', (req, res) => {
     const teamID = req.body.teamID;
@@ -72,15 +72,18 @@ app.post('/hideArena', (req, res) => {
     getHideArena(req, res);
 });
 
+app.get('/addPlayer', addPlayerPage);
 app.get('/viewStanding', getStanding);
-
+app.get('/delete/:id', deletePlayer);
 app.get('/hideA', getHideAction);
 app.get('/showA', getShowAction);
 app.get('/hideZ', getHideZscore);
 app.get('/hideAll', getHideAll);
+app.get('/edit/:id', editPlayerPage);
 
 app.post("/form", getNewZscore);
-
+app.post("/addPlayer", addPlayer);
+app.post("/edit/:id", editPlayer);
 app.post("/standingForm", getStanding);
 
 
