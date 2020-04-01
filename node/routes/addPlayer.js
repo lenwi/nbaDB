@@ -16,7 +16,6 @@ module.exports = {
     },
     addPlayer: (req, res) =>{
         console.log("Added player!")
-        console.log(req)
         let name = req.body.first_name + " " + req.body.last_name;
         let number = req.body.number;
         let zscore = req.body.zscore;
@@ -32,11 +31,9 @@ module.exports = {
                 return res.status(500).send(err);
             }
             teamID = res[0].id;
-            console.log("Team ID is: " + teamID);
           //  dasdasd
           let insertQuery = "INSERT INTO `playerplaysfor` (teamID, number, name, position, zscore) " +
             "VALUES (" + teamID + "," + number+",'" + name + "','" + position[0] + "'," + zscore + ")"
-        console.log(insertQuery)
           db.query(insertQuery, (err, res) => {
               if(err){
                   return res.status(500).send(err);
