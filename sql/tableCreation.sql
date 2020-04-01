@@ -32,7 +32,7 @@ CREATE TABLE City(
     population INTEGER,
     country char(3),
     PRIMARY KEY (id),
-    FOREIGN KEY (country) REFERENCES Country (abbrev)
+    FOREIGN KEY (country) REFERENCES Country (abbrev) ON DELETE CASCADE
 );
 
 CREATE TABLE TeamPlaysIn (
@@ -90,7 +90,7 @@ CREATE TABLE Stadium(
     teamID integer,
     name varchar(24),
     PRIMARY KEY (teamID),
-    FOREIGN KEY (teamID) REFERENCES TeamPlaysIn(id)
+    FOREIGN KEY (teamID) REFERENCES TeamPlaysIn(id) ON DELETE CASCADE
 );
 
 CREATE TABLE Game(
@@ -99,7 +99,7 @@ CREATE TABLE Game(
     teamB varchar(24),
     winner varchar(24),
     PRIMARY KEY (id),
-    FOREIGN KEY (teamA) REFERENCES Stadium(teamID)
+    FOREIGN KEY (teamA) REFERENCES Stadium(teamID) ON DELETE CASCADE
 );
 
 
