@@ -1,0 +1,51 @@
+<%- include ('partials/header.ejs'); -%>
+<div class="container">
+    <% if (message) { %>
+        <p class="text-center text-danger"><%= message %></p>
+    <% } %>
+
+    <% if (player) { %>
+        <form class="add-player-form" action="" method="POST">
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="first-name">Name</label>
+                    <input type="text" class="form-control" name="name" id="name" value="<%= player.name %>" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="number">Number</label>
+                    <input type="number" class="form-control" name="number" id="number" value="<%= player.number %>" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="zscore">Z-Score</label>
+                    <input type="number" class="form-control" name="zscore" id="zscore" value="<%= player.zscore %>" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="team">Team</label>
+                    <select id="team" name="team" class="form-control" required>
+                        <option selected><%= selectedTeamName.name %></option>
+                      <% teams.forEach((team) => { %>
+                        <option value="<%= team.name %>" > <%=team.name %> </option>
+                        <% }) %>
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="position">Position</label>
+                    <select id="position" name="position" class="form-control" required>
+                        <option selected><%= player.position %></option>
+                        <option>F</option>
+                        <option>G</option>
+                        <option>C</option>
+                    </select>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-success float-right">Update Player</button>
+        </form>
+    <% } else { %>
+        <p class="text-center">Player Not Found. Go <a href="/add">here</a> to add players.</p>
+    <% } %>
+</div>
+</div>
+</body>
+</html>
