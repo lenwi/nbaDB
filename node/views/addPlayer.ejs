@@ -13,10 +13,10 @@
                 <tbody>
                     <% viewPlayers.forEach((viewPlayer, index) => { %>
                         <tr>
-                            <th scope="row"><%= viewPlayer.Team %></th>
-                            <td><%= viewPlayer.Player %></td>
-                            <td><%= viewPlayer.Num %></td>
-                            <td><%= viewPlayer.Pos %></td>
+                            <th scope="row"><%= viewPlayer.teamname %></th>
+                            <td><%= viewPlayer.playername %></td>
+                            <td><%= viewPlayer.playernum %></td>
+                            <td><%= viewPlayer.playerposition %></td>
                         </tr>
                     <% }) %>
                 </tbody>

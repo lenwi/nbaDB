@@ -1,19 +1,16 @@
 <%- include ('partials/header.ejs'); -%>
     <div class="table-wrapper">
         <% if (players.length > 0) {%>
-            <form action="/form" method="POST">
-                <label class="text-info font-weight-bold">&nbsp;&nbsp;Find a player </label>
-                <input type="text" name="findplayer">
-                <input class="btn-primary" type="submit" name="submit" value="Find"/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <label class="text-info font-weight-bold">Find Z-scores </label>
+            <form class="text-center" action="/form" method="POST">
+                <label>Find Z-scores </label>
                 <input class="btn-primary" type="submit" name="submit" value=">="/>
                 <input type="text" name="zscoreinput">
                 <input class="btn-primary" type="submit" name="submit" value="&nbsp;&lt; "/>
             </form>
-            <a href='/hideA'><button type="button" class="btn btn-sm btn-light float-right ">Hide Action</button></a>
-            <a href='/'><button type="button" class="btn btn-sm btn-primary float-right ">Show Action</button></a>
-            <a href='/hideZ'><button type="button" class="btn btn-sm btn-light float-right ">Hide Z-score</button></a>
-            <a href='/'><button type="button" class="btn btn-sm btn-primary float-right">Show Z-score</button></a>
+            <a href='/hideA'><button type="button" class="btn btn-sm btn-info float-right ">Hide Action</button></a>
+            <a href='/showA'><button type="button" class="btn btn-sm btn-light float-right ">Show Action</button></a>
+            <a href='/hideAll'><button type="button" class="btn btn-sm btn-light float-right ">Hide Z-score</button></a>
+            <a href='/hideA'><button type="button" class="btn btn-sm btn-primary float-right">Show Z-score</button></a>
             <table class="table table-hovered">
                 <thead class="thead-dark">
                     <tr>
@@ -22,7 +19,6 @@
                         <th scope="col">#</th>
                         <th scope="col">Position</th>
                         <th scope="col">Z-score
-                    <th scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -33,10 +29,6 @@
                             <td><%= player.playernum %></td>
                             <td><%= player.playerposition %></td>
                             <td><%= player.zscore %></td>
-                            <td>
-                                <a href="/edit/<%= player.id %>" target="_blank" rel="noopener" class="btn btn-sm btn-success">Edit</a>
-                                <a href="/delete/<%= player.id %>" class="btn btn-sm btn-danger">Delete</a>
-                            </td>
                         </tr>
                     <% }) %>
                 </tbody>

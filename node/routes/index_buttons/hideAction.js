@@ -1,5 +1,5 @@
 module.exports = {
-    getHomePage: (req, res) => {
+    getHideAction: (req, res) => {
         let query = "select * from teamplayers" //display players with teams
 
         // execute query
@@ -8,7 +8,8 @@ module.exports = {
                 res.redirect('/');
             }
             console.log("###########################")
-            res.render('index.ejs', {
+            console.log(res)
+            res.render('indexHiddenA.ejs', {
                 title: "NBA DB | View Players", 
                 players: result, 
             });

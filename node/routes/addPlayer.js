@@ -8,7 +8,6 @@ module.exports = {
                 res.redirect('/');
             }
             console.log("###########################")
-            console.log(res)
             res.render('addPlayer.ejs', {
                 title: "NBA DB | Add Player", viewPlayers: result
             });

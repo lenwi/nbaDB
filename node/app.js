@@ -10,6 +10,15 @@ const {getHomePage} = require('./routes/index');
 const {getTeams} = require('./routes/viewTeams');
 const {getPlayer} = require('./routes/addPlayer');
 const {getHideArena} = require('./routes/hideArena');
+const {getNewZscore} = require('./routes/newZscore');
+const {getStanding} = require('./routes/viewStanding');
+
+//show/hide buttons
+const {getHideAction} = require('./routes/index_buttons/hideAction');
+const {getShowAction} = require('./routes/index_buttons/showAction');
+const {getHideZscore} = require('./routes/index_buttons/hideZscore');
+const {getHideAll} = require('./routes/index_buttons/hideAll');
+
 const port = 9000;
 const db = mysql.createConnection({
     host: 'localhost',
@@ -62,6 +71,19 @@ app.post('/hideArena', (req, res) => {
     });
     getHideArena(req, res);
 });
+
+app.get('/viewStanding', getStanding);
+
+app.get('/hideA', getHideAction);
+app.get('/showA', getShowAction);
+app.get('/hideZ', getHideZscore);
+app.get('/hideAll', getHideAll);
+
+app.post("/form", getNewZscore);
+
+app.post("/standingForm", getStanding);
+
+
 // set the app to listen on the port
 app.listen(port, () => {
     console.log(`Server running on port: ${port}`);

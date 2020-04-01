@@ -1,11 +1,12 @@
 --Displays players grouped by team, show when creating/deleting a new player
 --Join
 CREATE VIEW teamPlayers AS 
-SELECT teamplaysin.name AS Team, playerplaysfor.name AS Player, 
-playerplaysfor.number AS Num, playerplaysfor.position AS Pos
+SELECT teamplaysin.name AS teamname, playerplaysfor.name AS playername, 
+playerplaysfor.number AS playernum, playerplaysfor.position AS playerposition,
+playerplaysfor.zscore AS zscore
 FROM teamplaysin Inner JOIN playerplaysfor
 ON teamplaysin.id=playerplaysfor.teamID
-ORDER BY Team
+ORDER BY teamname
 
 Go --remove Go in mysql
 
@@ -30,27 +31,13 @@ Where P.zscore >= 1;
 --Displays all players who placed x in year y
 --Division
 --TODO// replace 'First' with user input x, 2012 with user input y
---TODO// doesnt work
 Select P.name As Player
 From playerplaysfor P
-Where not exists
-(Select S.teamID
-From seasonof S 
-Where not exists
-(Select T.id
-From teamplaysin T
-Where T.id = P.teamID AND T.id = S.teamID AND S.year = 2012 AND
-S.standing = 'First'));
-
---TODO// except version, select is invalid error
--- Select P.name As Player
--- From playerplaysfor P
--- Where not exists (
--- (Select S.teamID from seasonof S)
--- Except
--- (Select T.id from teamplaysin T
--- where T.id=P.teamID and S.year = 2012 and
--- S.standing = 'First'));
+Where not exists (
+Select S.teamID from seasonof S where S.year = 2012 and
+S.standing = 'First' and S.teamID not in
+(Select T.id from teamplaysin T
+where T.id=P.teamID));
 
 --Displays teams with number of sponsors and total amount of $ funded by all 
 --sponsors combined
