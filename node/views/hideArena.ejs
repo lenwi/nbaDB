@@ -1,0 +1,40 @@
+<%- include ('partials/header.ejs'); -%>
+<div class="table-wrapper">
+    <% if (teams.length > 0) {%>
+        <table class="table table-hovered">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Logo</th>
+                <th scope="col">City</th>
+                <th scope="col">Name</th>
+                <th scope="col">Coach</th>
+                <th scope="col">Country</th>
+                <th scope="col">Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% teams.forEach((team, index) => { %>
+                <tr>
+                    <th scope="row"><%= team.id %></th>
+                    <td><img src=<%=team.logo%> style="width:40px;height:40px;"/></td>
+                    <td><%= team.city %></td>
+                    <td><%= team.teamname %></td>
+                    <td><%= team.coach %></td>
+                    <td><%= team.country %></td>
+                    <td>
+                        <form action="/hideArena" method="post">
+                            <button name="teamID" type="submit" value=<%=team.id.toString()%>>Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            <% }) %>
+            </tbody>
+        </table>
+    <% } else { %>
+        <p class="text-center">No teams found. Go <a href="/addTeam" >here</a> to add teams.</p>
+    <% } %>
+</div>
+</div>
+</body>
+</html>

@@ -9,6 +9,7 @@ const app = express();
 const {getHomePage} = require('./routes/index');
 const {getTeams} = require('./routes/viewTeams');
 const {getPlayer} = require('./routes/addPlayer');
+const {getHideArena} = require('./routes/hideArena');
 const {getNewZscore} = require('./routes/newZscore');
 const {getStanding} = require('./routes/viewStanding');
 
@@ -22,7 +23,7 @@ const port = 9000;
 const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'macbook123',
+    password: '12345678',
     database: 'nbaDB'
   });
 
@@ -44,7 +45,33 @@ app.use(express.static(path.join(__dirname, 'public'))); // configure express to
 
 app.get('/', getHomePage);
 app.get('/viewTeams', getTeams);
+app.post('/viewTeams', (req, res) => {
+    const teamID = req.body.teamID;
+    const query = "DELETE FROM TeamPlaysIn WHERE id =" + teamID + ";";
+    console.log(query);
+    db.query(query, (err, result) => {
+        if (err) {
+            res.redirect('/viewTeams');
+            console.log(err);
+        }
+    });
+    getTeams(req, res);
+});
 app.get('/addPlayer', getPlayer);
+app.get('/hideArena', getHideArena);
+app.post('/hideArena', (req, res) => {
+    const teamID = req.body.teamID;
+    const query = "DELETE FROM TeamPlaysIn WHERE id =" + teamID + ";";
+    console.log(query);
+    db.query(query, (err, result) => {
+        if (err) {
+            res.redirect('/hideArena');
+            console.log(err);
+        }
+    });
+    getHideArena(req, res);
+});
+
 app.get('/viewStanding', getStanding);
 
 app.get('/hideA', getHideAction);
