@@ -10,6 +10,7 @@ const {getHomePage} = require('./routes/index');
 const {getTeams} = require('./routes/viewTeams');
 const {getPlayer} = require('./routes/addPlayer');
 const {getNewZscore} = require('./routes/newZscore');
+const {getStanding} = require('./routes/viewStanding');
 
 //show/hide buttons
 const {getHideAction} = require('./routes/index_buttons/hideAction');
@@ -44,6 +45,7 @@ app.use(express.static(path.join(__dirname, 'public'))); // configure express to
 app.get('/', getHomePage);
 app.get('/viewTeams', getTeams);
 app.get('/addPlayer', getPlayer);
+app.get('/viewStanding', getStanding);
 
 app.get('/hideA', getHideAction);
 app.get('/showA', getShowAction);
@@ -52,6 +54,11 @@ app.get('/hideAll', getHideAll);
 
 app.get("/form", getHomePage);
 app.post("/form", getNewZscore);
+
+app.get("/standingForm", getHomePage);
+
+app.post("/standingForm", getStanding);
+
 
 // set the app to listen on the port
 app.listen(port, () => {
