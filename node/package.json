@@ -14,6 +14,7 @@
     "express": "^4.17.1",
     "express-fileupload": "^1.1.6",
     "mysql": "^2.18.1",
+    "nodemon": "^2.0.2",
     "req-flash": "0.0.3"
   }
 }

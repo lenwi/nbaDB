@@ -2,7 +2,7 @@
 2. Create Teamview. - MIKE
     - TEAMVIEW: Country, Mascot, Team, City, Sponsorship, Coach, Funds, Statdium, Game, Season
     - checkmarks
-    
+   - DONE
 3. Insert operation - add player - ASAD - DONE
 4. Delete operation - delete player - ASAD - DONE
 5. Update operation - edit player - ASAD - DONE
