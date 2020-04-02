@@ -1,5 +1,6 @@
 <%- include ('partials/header.ejs'); -%>
     <div class="table-wrapper">
+        <h2>Players: <%= pcount %></h2>
         <% if (players.length > 0) {%>
             <a href='/hideAll'><button type="button" class="btn btn-sm btn-info float-right ">Hide Action</button></a>
             <a href='/hideZ'><button type="button" class="btn btn-sm btn-light float-right ">Show Action</button></a>

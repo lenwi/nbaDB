@@ -1,5 +1,6 @@
 <%- include ('partials/header.ejs'); -%>
     <div class="table-wrapper">
+        <h2>Players: <%= pcount %></h2>
         <% if (players.length > 0) {%>
             <form class="text-center" action="/form" method="POST">
                 <label>Find Z-scores </label>
