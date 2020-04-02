@@ -124,3 +124,11 @@ CREATE TABLE SeasonOf(
         ON DELETE CASCADE
         ON UPDATE CASCADE
 );
+
+CREATE VIEW teamPlayers AS
+SELECT teamplaysin.name AS teamname, playerplaysfor.name AS playername,
+       playerplaysfor.number AS playernum, playerplaysfor.position AS playerposition,
+       playerplaysfor.zscore AS zscore, playerplaysfor.id AS playerID
+FROM teamplaysin Inner JOIN playerplaysfor
+                            ON teamplaysin.id=playerplaysfor.teamID
+ORDER BY teamname;
