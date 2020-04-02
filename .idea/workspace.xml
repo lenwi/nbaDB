@@ -3,13 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="4493810b-066c-4f7f-9b7d-242df6c569b2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TODO.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TODO.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/node/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sql/insertions.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql/insertions.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sql/tableCreation.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql/tableCreation.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/node/routes/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node/routes/index_buttons/hideAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/node/routes/index_buttons/hideAction.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node/routes/index_buttons/hideAll.js" beforeDir="false" afterPath="$PROJECT_DIR$/node/routes/index_buttons/hideAll.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node/routes/index_buttons/hideZscore.js" beforeDir="false" afterPath="$PROJECT_DIR$/node/routes/index_buttons/hideZscore.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node/routes/index_buttons/showAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/node/routes/index_buttons/showAction.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node/views/index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/node/views/index.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node/views/indexHiddenA.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/node/views/indexHiddenA.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node/views/indexHiddenAll.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/node/views/indexHiddenAll.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node/views/indexHiddenZ.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/node/views/indexHiddenZ.ejs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +107,7 @@
       <workItem from="1585687658074" duration="12228000" />
       <workItem from="1585717791349" duration="3912000" />
       <workItem from="1585729385784" duration="1653000" />
-      <workItem from="1585804344017" duration="2065000" />
+      <workItem from="1585804344017" duration="3357000" />
     </task>
     <servers />
   </component>
@@ -121,25 +123,25 @@
       <screen x="0" y="0" width="1504" height="963" />
     </state>
     <state x="670" y="243" key="FileChooserDialogImpl/0.0.1504.963@0.0.1504.963" timestamp="1585542913720" />
-    <state width="1461" height="256" key="GridCell.Tab.0.bottom" timestamp="1585806550269">
+    <state width="1461" height="256" key="GridCell.Tab.0.bottom" timestamp="1585807796137">
       <screen x="0" y="0" width="1504" height="963" />
     </state>
-    <state width="1461" height="256" key="GridCell.Tab.0.bottom/0.0.1504.963/167.-1080.1920.1040@0.0.1504.963" timestamp="1585806550269" />
+    <state width="1461" height="256" key="GridCell.Tab.0.bottom/0.0.1504.963/167.-1080.1920.1040@0.0.1504.963" timestamp="1585807796137" />
     <state width="1461" height="256" key="GridCell.Tab.0.bottom/0.0.1504.963@0.0.1504.963" timestamp="1585718173821" />
-    <state width="1461" height="256" key="GridCell.Tab.0.center" timestamp="1585806550268">
+    <state width="1461" height="256" key="GridCell.Tab.0.center" timestamp="1585807796137">
       <screen x="0" y="0" width="1504" height="963" />
     </state>
-    <state width="1461" height="256" key="GridCell.Tab.0.center/0.0.1504.963/167.-1080.1920.1040@0.0.1504.963" timestamp="1585806550268" />
+    <state width="1461" height="256" key="GridCell.Tab.0.center/0.0.1504.963/167.-1080.1920.1040@0.0.1504.963" timestamp="1585807796137" />
     <state width="1461" height="256" key="GridCell.Tab.0.center/0.0.1504.963@0.0.1504.963" timestamp="1585718173820" />
-    <state width="1461" height="256" key="GridCell.Tab.0.left" timestamp="1585806550268">
+    <state width="1461" height="256" key="GridCell.Tab.0.left" timestamp="1585807796136">
       <screen x="0" y="0" width="1504" height="963" />
     </state>
-    <state width="1461" height="256" key="GridCell.Tab.0.left/0.0.1504.963/167.-1080.1920.1040@0.0.1504.963" timestamp="1585806550268" />
+    <state width="1461" height="256" key="GridCell.Tab.0.left/0.0.1504.963/167.-1080.1920.1040@0.0.1504.963" timestamp="1585807796136" />
     <state width="1461" height="256" key="GridCell.Tab.0.left/0.0.1504.963@0.0.1504.963" timestamp="1585718173820" />
-    <state width="1461" height="256" key="GridCell.Tab.0.right" timestamp="1585806550268">
+    <state width="1461" height="256" key="GridCell.Tab.0.right" timestamp="1585807796137">
       <screen x="0" y="0" width="1504" height="963" />
     </state>
-    <state width="1461" height="256" key="GridCell.Tab.0.right/0.0.1504.963/167.-1080.1920.1040@0.0.1504.963" timestamp="1585806550268" />
+    <state width="1461" height="256" key="GridCell.Tab.0.right/0.0.1504.963/167.-1080.1920.1040@0.0.1504.963" timestamp="1585807796137" />
     <state width="1461" height="256" key="GridCell.Tab.0.right/0.0.1504.963@0.0.1504.963" timestamp="1585718173820" />
     <state width="1461" height="317" key="GridCell.Tab.1.bottom" timestamp="1585704505355">
       <screen x="0" y="0" width="1504" height="963" />
