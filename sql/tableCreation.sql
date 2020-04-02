@@ -47,7 +47,7 @@ CREATE TABLE TeamPlaysIn (
 );
 
 CREATE TABLE PlayerPlaysFor(
-    id integer,
+    id integer AUTO_INCREMENT,
     teamID integer,
     number INTEGER,
     name varchar(20),
