@@ -1,14 +1,14 @@
 1. Populate SQL tables at begining of running app
-2. Create Teamview. - MIKE 
+2. Create Teamview. - MIKE
     - TEAMVIEW: Country, Mascot, Team, City, Sponsorship, Coach, Funds, Statdium, Game, Season
     - checkmarks
     
-3. Insert operation - add player - ASAD
-4. Delete operation - delete player - ASAD
-5. Update operation - edit player - ASAD
+3. Insert operation - add player - ASAD - DONE
+4. Delete operation - delete player - ASAD - DONE
+5. Update operation - edit player - ASAD - DONE
 
 
-// 8. Join operation - See query in queries.sql. Show when adding player, show players that play for teams.
+// 8. Join operation - See query in queries.sql. Show when adding player, show players that play for teams. 
 9. Aggregate operation - See query in queries.sql. Show when clicking team checkbox, display number of sponsors.
 10. Nested Aggregate operation - See query in queries.sql. Show when clicking team checkbox, display number of players.
 
