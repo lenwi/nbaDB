@@ -9,7 +9,7 @@ module.exports = {
         if (inputValue == ">=") {
             query = "select * from teamplayers " + "where zscore >= " + zInput; 
         } else if (inputValue == "Find") {
-            query = "select * from teamplayers " + "where playername = " + "'" + playerInput + "'";
+            query = "select * from teamplayers " + "where playername LIKE " + "'%" + playerInput + "%'";
         } else {
             query = "select * from teamplayers " + "where zscore < " + zInput; 
         }

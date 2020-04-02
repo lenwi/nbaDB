@@ -14,8 +14,7 @@ module.exports = {
             });
         });
     },
-    addPlayer: (req, res) =>{
-        console.log("Added player!")
+    addPlayer: (req, result) =>{
         let name = req.body.first_name + " " + req.body.last_name;
         let number = req.body.number;
         let zscore = req.body.zscore;
@@ -28,7 +27,7 @@ module.exports = {
         db.query(teamIDQuery, (err, res) => {
             if(err){
                 console.log("Error grabbing teamID!");
-                return res.status(500).send(err);
+                return result.status(500).send(err);
             }
             teamID = res[0].id;
           //  dasdasd
@@ -36,12 +35,13 @@ module.exports = {
             "VALUES (" + teamID + "," + number+",'" + name + "','" + position[0] + "'," + zscore + ")"
           db.query(insertQuery, (err, res) => {
               if(err){
-                  return res.status(500).send(err);
+                  console.log("Error trying this query: "+ insertQuery);
+                  return result.status(500).send(err);
               }
               console.log("Succesfully added player!")
             
           });
         });
-        res.redirect("/");
+        result.redirect("/");
     }
 };

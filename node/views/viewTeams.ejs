@@ -12,6 +12,7 @@
                         <th scope="col">Coach</th>
                         <th scope="col">Country</th>
                         <th scope="col">Arena</th>
+                        <th scope="col">Sponsors</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
@@ -25,6 +26,7 @@
                             <td><%= team.coach %></td>
                             <td><%= team.country %></td>
                             <td><%= team.arena %></td>
+                            <td><%= team.sponsors %></td>
                             <td>
                                 <form action="/viewTeams" method="post">
                                     <button name="teamID" type="submit" value=<%=team.id.toString()%>>Delete</button>
