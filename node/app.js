@@ -1,5 +1,6 @@
 
 const express = require('express');
+const fs = require('fs');
 const fileUpload = require('express-fileupload');
 const bodyParser = require('body-parser');
 const mysql = require('mysql');
@@ -28,15 +29,31 @@ const db = mysql.createConnection({
     database: 'nbaDB'
   });
 
-  db.connect((err) => {
-    if (err) throw err;
+db.connect((err) => {
+    if (err)
+        throw err;
     console.log('Connected to database!');
+});
+global.db = db;
 
-  });
-
-  global.db = db;
-
-
+const tablesSql = fs.readFileSync('sql/tableCreation.sql').toString();
+const insertionsSql = fs.readFileSync('sql/insertions.sql').toString();
+const tableArr = tablesSql.split(';');
+const insArr = insertionsSql.split(';');
+tableArr.forEach((query) => {
+    db.query(query, (err, res) => {
+        if (err){
+            return;
+        }
+    });
+});
+insArr.forEach((query) => {
+    db.query(query, (err, res) => {
+        if (err){
+            return;
+        }
+    });
+});
 app.set('port', process.env.port || port); // set express to use this port
 app.set('views', __dirname + '/views'); // set express to look in this folder to render our view
 app.set('view engine', 'ejs'); // configure template engine

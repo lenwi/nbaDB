@@ -1,6 +1,18 @@
-DROP DATABASE IF EXISTS nbadb;
-CREATE DATABASE nbadb;
 USE nbadb;
+
+Drop table if exists playerplaysfor;
+Drop table if exists seasonof;
+Drop table if exists TeamPlaysGame;
+Drop table if exists game;
+drop table if exists funds;
+drop table if exists stadium;
+Drop table if exists coach;
+Drop table if exists teamplaysin;
+drop table if exists city;
+drop table if exists sponsorships;
+drop table if exists hasmascot;
+drop table if exists country;
+drop view if exists teamplayers;
 
 CREATE TABLE Country(
 	abbrev char(3),

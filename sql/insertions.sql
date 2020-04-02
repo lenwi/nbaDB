@@ -1,4 +1,3 @@
-
 INSERT INTO Country values ("CAN", "56.1304° N, 106.3468° W", "Canada", "CAD");
 INSERT INTO Country values("MEX", "23.6345° N, 102.5528° W", "Mexico", "PESO");
 INSERT INTO Country values("ZBE", "19.0154° S, 29.1549° E", "Zimbabwe", "ZMB");
