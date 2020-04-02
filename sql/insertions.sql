@@ -165,8 +165,8 @@ INSERT INTO SeasonOf values(2014, 3, "Second");
 INSERT INTO SeasonOf values(2015, 4, "Tenth");
 INSERT INTO SeasonOf values(2016, 5, "Seventh");
 
-INSERT INTO coach values(1, 'Coach man1', 3, NULL, 1);
-INSERT INTO coach values(2, 'Coach man2', 5, NULL, 2);
-INSERT INTO coach values(3, 'Coach man3', 12, NULL, 3);
-INSERT INTO coach values(4, 'Coach man4', 1, NULL, 5);
-INSERT INTO coach values(5, 'Coach man5', 7, NULL, 9);
+INSERT INTO coach values(1, 'Gregg Popovich', 3, NULL, 1);
+INSERT INTO coach values(2, 'Doc Rivers', 5, NULL, 2);
+INSERT INTO coach values(3, 'Steve Kerr', 12, NULL, 3);
+INSERT INTO coach values(4, 'Rick Carlisle', 1, NULL, 5);
+INSERT INTO coach values(5, 'Frank Vogel', 7, NULL, 9);
