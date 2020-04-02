@@ -19,11 +19,22 @@ module.exports = {
             if (err) {
                 res.redirect('/');
             }
-            console.log(req);
-            console.log("###########################")
-            res.render('index.ejs', {
-                title: "NBA DB | View Players", 
-                players: result, 
+            db.query("select count(*) as pcount from teamplayers", (err1, result1) => {
+                if (err) {
+                    res.redirect('/');
+                }
+                var count;
+                if (result1.length < 1) {
+                    count = 0;
+                } else {
+                    count = result1[0].pcount;
+                }
+
+                res.render('index.ejs', {
+                    title: "NBA DB | View Players",
+                    players: result,
+                    pcount: count
+                });
             });
         });
     },
