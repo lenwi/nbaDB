@@ -8,3 +8,12 @@
 4. Run this from the repository root folder.
 <pre> node node/app.js </pre>
 5. Open a web browser window and go to localhost:9000.
+
+
+
+
+
+
+
+
+*may need to start mysql.exe through: winkey+r -> services.msc -> run mysql.exe
