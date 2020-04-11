@@ -1,5 +1,7 @@
 # nbaDB
 
+![nbaDB Example](https://github.com/lenwi/nbaDB/blob/master/nbadbDemo.PNG)
+
 ### Running the app
 1. Start the MySQL server and ensure a database called nbadb exists in it.
 2. Ensure the MySQL host and password match your local server in the node/app.js file.
